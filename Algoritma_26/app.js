@@ -1,42 +1,63 @@
 let str = "88Hello 3World";
 
-let strArr = str.split('');
+//! 1 Yol
 
-let numberArr = [];
+// let strArr = str.split('');
 
-for(i=0; i<strArr.length; i++) {
+// let numberArr = [];
 
-    let lastI = numberArr.length - 1;
+// for(i=0; i<strArr.length; i++) {
 
-    if((/[^0-9]/).test(strArr[i])) {
-        numberArr.push(strArr[i]);
-    }
-    else {
-        if(numberArr.length === 0) {
-            numberArr.push(strArr[i]);
-        }
-        else if((/[0-9]/).test(numberArr[lastI])) {
-            numberArr[lastI] = numberArr[lastI] + strArr[i];
-        }
-        else if((/[^0-9]/).test(numberArr[lastI])) {
-            numberArr.push(strArr[i]);
-        }
-    }
+//     let lastI = numberArr.length - 1;
 
-}
+//     if((/[^0-9]/).test(strArr[i])) {
+//         numberArr.push(strArr[i]);
+//     }
+//     else {
+//         if(numberArr.length === 0) {
+//             numberArr.push(strArr[i]);
+//         }
+//         else if((/[0-9]/).test(numberArr[lastI])) {
+//             numberArr[lastI] = numberArr[lastI] + strArr[i];
+//         }
+//         else if((/[^0-9]/).test(numberArr[lastI])) {
+//             numberArr.push(strArr[i]);
+//         }
+//     }
 
-calculateSum(numberArr)
+// }
 
-function calculateSum(arr) {
+// calculateSum(numberArr)
 
-    let sum = 0
+// function calculateSum(arr) {
 
-    for(let j=0; j<arr.length; j++) {
-        if(arr[j].match(/\d+/)) {
-            sum += parseInt(arr[j]);
-        }
+//     let sum = 0
+
+//     for(let j=0; j<arr.length; j++) {
+//         if(arr[j].match(/\d+/)) {
+//             sum += parseInt(arr[j]);
+//         }
+//     }
+
+//     console.log(sum);
+
+// }
+
+
+//! 2 Yol
+
+function NumberAddition(str) {
+
+    let sum = 0;
+
+    str = str.replace(/[^0-9\.]+/g, " ").split(" ");
+
+    for (let i = 0; i < str.length; i++) {
+        sum += Number(str[i]);
     }
 
     console.log(sum);
-    
+
 }
+
+NumberAddition(str);
